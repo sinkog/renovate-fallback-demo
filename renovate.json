@@ -1,6 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranchPatterns": ["main", "with-branch-config", "without-branch-config"],
+  "baseBranchPatterns": [
+    "main",
+    "with-branch-config",
+    "without-branch-config"
+  ],
   "useBaseBranchConfig": "fallback",
-  "dependencyDashboard": false
+  "dependencyDashboard": false,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0
 }
