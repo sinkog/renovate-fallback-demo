@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranchPatterns": ["main", "with-branch-config", "without-branch-config"],
-  "useBaseBranchConfig": "fallback",
-  "dependencyDashboard": false
+  "labels": ["branch-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^versions\\.env$/"],
+      "matchStrings": ["POSTGRES_VERSION=(?<currentValue>\\S+)"],
+      "depNameTemplate": "postgres",
+      "datasourceTemplate": "docker"
+    }
+  ]
 }
